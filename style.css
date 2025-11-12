@@ -87,6 +87,8 @@ body {
   height: auto;
   margin: 0;
   word-break: break-word;
+  flex-grow: 1; 
+  height: auto; 
 }
 
 /* Права колонка */
