@@ -1,38 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Світ косметики</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Краса врятує світ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <div id="block1" class="block">1</div>
-    <div id="block2" class="block">2</div>
-    <div id="block3" class="block">
-      <h2>Світ косметики</h2>
-      <p>Світ косметики — це чарівна всесвітня сцена, де поєднуються наука і краса, створюючи гармонію догляду і самовираження.</p>
-      <p>Кожен продукт — це результат творчості, технологій і прагнення підкреслити природну індивідуальність кожної людини.</p>
+    <div class="block" id="block1">
+        <h1>Будь красивим щодня!</h1>
     </div>
-    <div id="block4" class="block">4</div>
-    <div id="block5" class="block">
-      <h3>Обчислення</h3>
-      <form id="maxDigitForm">
-        <label>Введіть число:</label>
-        <input type="number" id="numberInput" required />
-        <button type="submit">Знайти максимальну цифру</button>
-      </form>
+
+    <div class="middle-row">
+
+        <!-- Ліва колонка -->
+        <div class="block2" id="block2">
+            <h2 class="menu-title">Меню</h2>
+            <ul class="menu-list">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="dior.html">Dior</a></li>
+                <li><a href="chanel.html">Chanel</a></li>
+                <li><a href="hillary.html">Hillary</a></li>
+                <li><a href="givenchy.html">Givenchy</a></li>
+            </ul>
+
+            <!-- Контрол для вирівнювання блоку 2 (радіокнопки) -->
+            <div class="align-controls">
+                <fieldset>
+                    <legend>Вирівнювання блоку 2</legend>
+                    <label><input type="radio" name="align_block2" value="left"> Вліво</label>
+                    <label><input type="radio" name="align_block2" value="right"> Вправо</label>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- Середня колонка (блок 3 і блок 5) -->
+        <div class="left-column">
+            <div class="block3" id="block3">
+                <p>
+                    Світ косметики — це чарівна всесвітня сцена, де поєднуються наука і краса,
+                    створюючи засоби, які допомагають людині виражати себе, підкреслювати індивідуальність і почуватися впевнено.
+                    Тут зустрічаються кольори, аромати, текстури та інновації, які роблять догляд за собою не просто звичкою,
+                    а справжнім мистецтвом.
+                </p>
+                <p>
+                    Косметика — це не лише зовнішність, а й стан душі. Вона здатна підняти настрій,
+                    надихнути на зміни та подарувати впевненість у собі. Добре підібраний догляд — це інвестиція у здоров'я шкіри,
+                    яка повертається сяйвом і комфортом кожного дня.
+                </p>
+            </div>
+
+            <div class="block5" id="block5">
+                <div class="makeup-container">
+                    <div class="makeup-left">
+                        <a href="https://www.byrdie.com/best-face-serums-4588133" target="_blank">
+                            Дізнатися інформацію можна, натиснувши
+                            на картинку! Приємного перегляду!
+                        </a>
+                    </div>
+                    <div class="makeup-center">
+                        <img src="make.jpg" alt="Косметика" usemap="#makeupmap" class="makeup-img">
+                    </div>
+                    <div class="makeup-right">
+                        <p>Люди найперше звертають увагу на обличчя – воно відображає стиль і догляд.</p>
+                    </div>
+                </div>
+
+                <map name="makeupmap">
+                    <area shape="rect" coords="50,100,150,200"
+                          href="https://www.byrdie.com/best-face-serums-4588133"
+                          alt="Пінка та тонік" target="_blank" title="Про очищення – огляд серумів">
+                    <area shape="rect" coords="160,100,260,200"
+                          href="https://people.com/best-toners-11801932"
+                          alt="Тонік" target="_blank" title="Про тоніки – огляд People">
+                    <area shape="rect" coords="300,100,400,200"
+                          href="https://www.byrdie.com/best-face-serums-4588133"
+                          alt="Сироватка" target="_blank" title="Про сироватку – огляд Byrdie">
+                </map>
+
+                <hr>
+
+                <!-- Форма для площі паралелограма (вимога) -->
+                <div id="area-form">
+                    <h3>Обчислити площу паралелограма</h3>
+                    <label>Основа: <input id="parBase" type="number" min="0" step="any"></label>
+                    <label>Висота: <input id="parHeight" type="number" min="0" step="any"></label>
+                    <button id="areaBtn" type="button">Обчислити</button>
+                    <div id="areaResult" aria-live="polite"></div>
+                </div>
+
+                <hr>
+
+                <!-- Форма для пошуку макс цифри (вимога) -->
+                <div id="maxdigit-form">
+                    <h3>Знайти максимальну цифру в натуральному числі</h3>
+                    <label>Число: <input id="maxDigitInput" type="text" inputmode="numeric" pattern="\\d*"></label>
+                    <button id="maxDigitBtn" type="button">Знайти</button>
+                </div>
+
+                <hr>
+
+                <!-- Контрол для вирівнювання блоку 5 -->
+                <div class="align-controls">
+                    <fieldset>
+                        <legend>Вирівнювання блоку 5</legend>
+                        <label><input type="radio" name="align_block5" value="left"> Вліво</label>
+                        <label><input type="radio" name="align_block5" value="right"> Вправо</label>
+                    </fieldset>
+                </div>
+
+                <!-- select-trigger для створення нумерованого списку -->
+                <div class="select-trigger" data-block="block5">Натисни щоб додати список у блок 5</div>
+            </div>
+        </div>
+
+        <!-- Права колонка (блок 4 і блок 6) -->
+        <div class="right-column">
+            <div class="block4" id="block4">
+                <p class="block4-text">Простота — це наше все</p>
+                <img src="face.jpg" alt="Лице" class="block4-img">
+                <div class="align-controls">
+                    <fieldset>
+                        <legend>Вирівнювання блоку 4</legend>
+                        <label><input type="radio" name="align_block4" value="left"> Вліво</label>
+                        <label><input type="radio" name="align_block4" value="right"> Вправо</label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="block6" id="block6">
+                <p class="intro-text">Основні принципи догляду за собою:</p>
+                <ol class="care-list">
+                    <li>Регулярний догляд за шкірою обличчя та рук.</li>
+                    <li>Використання косметики, що підходить саме твоєму типу шкіри.</li>
+                    <li>Натуральні засоби для волосся і шкіри – твої найкращі друзі.</li>
+                </ol>
+            </div>
+        </div>
     </div>
-    <div id="block6" class="block">6</div>
-    <div id="block7" class="block">7</div>
-  </div>
 
-  <form id="alignmentForm">
-    <label><input type="radio" name="align" value="left" /> Вирівняти вліво</label>
-    <label><input type="radio" name="align" value="right" /> Вирівняти вправо</label>
-  </form>
+    <div class="block" id="block7">
+        <h2>Краса в простоті</h2>
+        <div class="select-trigger" data-block="block7">Натисни щоб додати список у блок 7</div>
+    </div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
