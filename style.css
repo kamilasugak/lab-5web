@@ -1,37 +1,171 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ---------- БАЗОВІ СТИЛІ ---------- */
+* { box-sizing: border-box; }
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
 }
 
-.container {
+/* header / top blocks */
+.block {
+  padding: 1em;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* block1 та block7 з градієнтом (збережені) */
+#block1 {
+  background: linear-gradient(135deg, #0A0A0A, #D4AF37);
+  color: #AA8F32;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: calc(16px + 1vw);
+  padding: 1em;
+  text-align: left;
+}
+#block7 {
+  background: linear-gradient(135deg, #0A0A0A, #D4AF37);
+  color: #0A0A0A;
+  padding: 1em;
+  text-align: right;
+  font-size: calc(16px + 1vw);
+}
+
+/* ---------- Middle Row (NO gaps) ---------- */
+.middle-row {
   display: flex;
+  justify-content: space-between;
+  align-items: stretch;
   flex-wrap: wrap;
   width: 100%;
+  margin: 0;
+  gap: 0; /* прибрали проміжки між колонками */
 }
 
-.block {
-  flex: 1 1 30%;
-  min-width: 200px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  background-color: #f8f8f8;
-}
-
-#block3 {
-  background-color: #fff5f8;
-  height: auto;
-}
-
-#alignmentForm {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  background: #eee;
+/* Ліва колонка - меню (block2) */
+.block2 {
+  flex: 1.5;
+  background: linear-gradient(135deg, #FAFAD2, #0A0A0A);
+  box-sizing: border-box;
   padding: 10px;
-  border-radius: 10px;
+  margin: 0; /* прибрали зовнішні відступи */
+  min-width: 180px;
+  align-self: stretch;
 }
+
+/* Середня колонка (block3 + block5) */
+.left-column {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 240px;
+  margin: 0;
+}
+
+/* block3: тепер висота автоматична, padding забезпечує простір, блок тягнеться */
+.block3 {
+  background-color: black;
+  color: #FAFAD2;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  height: auto; /* важливо: автоматична висота */
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+/* block5: зберегли стилі, padding і автоматична висота */
+.block5 {
+  background: linear-gradient(135deg, #F8F4E3, #D4AF37);
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Права колонка */
+.right-column {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 180px;
+  margin: 0;
+}
+
+.block4 {
+  background: linear-gradient(135deg, #FAFAD2, #0A0A0A);
+  padding: 10px;
+  margin: 0;
+  color: #FFF8E7;
+  text-align: center;
+}
+.block6 {
+  background: linear-gradient(135deg, #FAFAD2, #0A0A0A);
+  padding: 10px;
+  margin: 0;
+  color: #FFF8E7;
+}
+
+/* Зображення та контейнери */
+.block4-img {
+  width: 100%;
+  max-width: 170px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 10px auto 0;
+}
+
+.makeup-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.makeup-left { flex:1; min-width:0; text-align:left; }
+.makeup-center { flex:2; text-align:center; }
+.makeup-right { flex:1; min-width:0; text-align:right; color:darkblue; }
+
+/* Про зображення в блок5: адаптивні правила */
+.makeup-img {
+  width: 55%;
+  max-width: 180px;
+  min-width: 120px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* меню */
+.menu-title { color: darkgrey; font-size: 1.2em; margin: 0 0 8px; }
+.menu-list { padding-left: 0; list-style: none; margin: 0; }
+.menu-list li { margin: 6px 0; }
+.menu-list a { color: darkred; text-decoration: none; font-style: italic; }
+
+/* форми, контрол-елементи */
+.align-controls fieldset { border: 1px dashed rgba(0,0,0,0.1); padding: 6px; margin-top: 8px; }
+.align-controls label { margin-right: 8px; font-size: 14px; }
+
+.select-trigger {
+  margin-top: 8px;
+  display: inline-block;
+  padding: 6px 8px;
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* дрібні адаптивні налаштування */
+@media (max-width: 800px) {
+  .middle-row { flex-direction: column; }
+  .makeup-img { width: 60%; }
+}
+
