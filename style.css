@@ -74,6 +74,8 @@ body {
   height: auto; /* важливо: автоматична висота */
   box-sizing: border-box;
   word-break: break-word;
+  flex-grow: 1; 
+  height: auto;
 }
 
 /* block5: зберегли стилі, padding і автоматична висота */
